@@ -1,21 +1,385 @@
+ 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Student Course Assessment</title>
-        <style>
-            body {
-                font-family: Arial sans-serif;
-                background: #f2f4f7;
-                padding: 25px
-            }
-            .container {
-                max-width: 450px;
-                margin: 40px auto;
-                background: white;
-                paddimg: 25px;
-                border-radius; 10px;
-            }
-            label, input,select,button {
-                display: block;
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>University Student Registration Portal</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f1f4f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #102d50;
+    color: white;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #f5bd4f;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(120deg, #153b68, #24659c);
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.hero h1 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    color: #e0eaf5;
+    font-size: 15px;
+}
+
+/* Main container */
+.container {
+    max-width: 850px;
+    margin: 35px auto;
+    padding: 0 15px;
+}
+
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+}
+
+.card h2 {
+    color: #153b68;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccd4df;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #24659c;
+}
+
+/* Disclaimer */
+.disclaimer {
+    background: #fff6df;
+    border-left: 5px solid #e5a323;
+    padding: 17px;
+    margin: 25px 0;
+    border-radius: 5px;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.disclaimer strong {
+    color: #875d08;
+}
+
+/* Button */
+button {
+    width: 100%;
+    background: #174c7e;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #10385e;
+}
+
+/* Awareness message */
+#awareness {
+    display: none;
+    margin-top: 25px;
+    padding: 22px;
+    background: #e5f5eb;
+    border-left: 5px solid #239653;
+    border-radius: 6px;
+    line-height: 1.7;
+}
+
+#awareness h3 {
+    color: #176c3b;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #777;
+    font-size: 13px;
+}
+
+/* Mobile */
+@media(max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header nav a {
+        margin: 0 7px;
+    }
+
+    .hero h1 {
+        font-size: 23px;
+    }
+
+    .card {
+        padding: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        UNIVERSITY <span>PORTAL</span>
+    </div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#registration">Registration</a>
+        <a href="#training">Security</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Student Course Registration</h1>
+    <p>Academic Year 2026/2027 | Online Registration Portal</p>
+</section>
+
+<div class="container">
+
+    <div class="card" id="registration">
+
+        <h2>Student Registration</h2>
+
+        <p class="subtitle">
+            Complete the demonstration form below
+            to explore the registration process.
+        </p>
+
+        <form id="registrationForm">
+
+            <div class="form-group">
+            </div>
+
+            <div class="form-group">
+                <label for="password">
+                    Fictional Password Demonstration
+                </label>
+
+                <small>
+                    Use a fictional demonstration value only.
+                </small>
+            </div>
+
+            <div class="form-group">
+                <label for="course">
+                    Select Your Course
+                </label>
+
+                <select id="course" required>
+                    <option value="">-- Select a Course --</option>
+                    <option value="Computer Science">
+                        Computer Science
+                    </option>
+                    <option value="Information Technology">
+                        Information Technology
+                    </option>
+                    <option value="Cybersecurity">
+                        Cybersecurity
+                    </option>
+                    <option value="Business Administration">
+                        Business Administration
+                    </option>
+                    <option value="Data Science">
+                        Data Science
+                    </option>
+                </select>
+            </div>
+
+            <div class="disclaimer" id="training">
+                <strong>CYBERSECURITY TRAINING NOTICE</strong>
+                <br><br>
+
+                This webpage is a fictional university
+                phishing-awareness simulation developed
+                for authorised cybersecurity education.
+
+                <br><br>
+
+                Do not enter real student credentials,
+                personal information, or actual passwords.
+
+                <br><br>
+
+                Information entered into this demonstration
+                is not stored, recorded, or transmitted.
+                No OTP or verification codes are requested.
+            </div>
+
+            <button type="submit">
+              submit
+            </button>
+
+        </form>
+
+        <div id="awareness" role="status" aria-live="polite">
+
+            <h3>Cybersecurity Awareness Alert!</h3>
+
+            <p>
+                You have completed the fictional registration
+                demonstration.
+            </p>
+
+            <br>
+
+            <strong>Did you notice the warning signs?</strong>
+
+            <ul style="padding-left:20px; margin-top:10px;">
+
+                <li>
+                    Always verify the university website's
+                    official domain.
+                </li>
+
+                <li>
+                    Be suspicious of unexpected registration
+                    or account verification requests.
+                </li>
+
+                <li>
+                    Never enter your password on an unfamiliar
+                    website.
+                </li>
+
+                <li>
+                    Look for HTTPS, but remember that HTTPS
+                    alone does not prove a website is legitimate.
+                </li>
+
+                <li>
+                    Contact your university IT department
+                    when you suspect phishing.
+                </li>
+
+            </ul>
+
+            <br>
+
+            <strong>
+                Remember: Think Before You Click!
+            </strong>
+
+            <p>
+                This was an educational simulation.
+                No credentials were collected or transmitted.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2026 Fictional University |
+    Cybersecurity Awareness Training
+</footer>
+
+<script>
+
+const form = document.getElementById("registrationForm");
+
+const awareness = document.getElementById("awareness");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    document.getElementById("awareness").style.display = "block";
+    // Prevent page reload and network form submission
+    event.preventDefault();
+
+    // Display the educational message
+    awareness.style.display = "block";
+
+    // Remove entered values from the form
+    form.reset();
+
+    // Bring awareness message into view
+    awareness.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+});
+
+</script>
+
+</body>
+</html>
+
